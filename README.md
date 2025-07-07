@@ -1,10 +1,12 @@
-Reely
+#Reely
 
 Reely is a full-stack web application that allows users to upload videos and automatically generate English captions using AI, with optional Google login for saving history.
 
 Reely Automatic Video Captioning Tool Reely is a full-stack web application that allows users to upload videos and automatically generate time-aligned English captions using OpenAI Whisper. Users can optionally log in using Google to track their captioned video history and delete old videos.
 
-Architecture Diagram +----------------+ Upload/Caption +----------------+ | React Frontend | <--------------------> | FastAPI Backend | | (w/ Firebase Auth)| | (w/ Whisper + FFmpeg)| +--------+---------+ +----------------+ | | Fetch History / Delete | +--------------------> Local Storage (videos/, user_history.json)
+Architecture Diagram
+
++----------------+ Upload/Caption +----------------+ | React Frontend | <--------------------> | FastAPI Backend | | (w/ Firebase Auth)| | (w/ Whisper + FFmpeg)| +--------+---------+ +----------------+ | | Fetch History / Delete | +--------------------> Local Storage (videos/, user_history.json)
 
 Project Structure reely/ backend/ main.py utils/video.py videos/ frontend/ App.jsx components/ UploadWithLanguage.jsx firebase.js
 
